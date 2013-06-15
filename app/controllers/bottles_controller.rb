@@ -20,7 +20,7 @@ class BottlesController < ApplicationController
   end
 
   def tag
-    @bottles = current_user.partner.bottles.delivered.find_by_tag(URI.decode(params[:tag]))
+    @bottles = current_user.partner.bottles.delivered.find_by_tag(URI.decode(params[:tag])).order('created_at DESC')
   end
 
   private

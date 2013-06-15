@@ -1,0 +1,11 @@
+.buttle-list {
+  list-style-type: none;
+
+  .message {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .created-at {
+    float: right;
+  }
+}

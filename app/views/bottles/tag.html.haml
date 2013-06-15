@@ -1,8 +1,9 @@
 %div.container-fluid
   %div.row-fluid
 
-    - @bottles.each do |bottle|
-      %div.well
-        %h4 #{bottle.message}
-        %p [#{bottle.created_at.strftime("%Y-%m-%d")}]
+    %ul.buttle-list
+      - @bottles.each do |bottle|
+        %li.well
+          %span.message= bottle.message
+          %span.created-at= bottle.created_at.strftime("%Y-%m-%d %H:%M")
 
