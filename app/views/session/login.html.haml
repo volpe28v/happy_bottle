@@ -1,0 +1,12 @@
+%h1 Session#login
+
+= form_for @user, url: session_path do |f|
+  %div
+    = f.label :email
+    = f.text_field :email
+
+  %div
+    = f.label :password
+    = f.text_field :password
+
+  = f.submit 'OK'
