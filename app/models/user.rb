@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :password
   belongs_to :partnership
-  #has_one :partnership
+  has_many :bottles, foreign_key: "owner_id"
 
   before_save do
     self.hashed_password = self.class.encrypt(self.password) if self.password.present?
