@@ -16,10 +16,10 @@
  */
 
 body {
- background-color: white;
- background-attachment: fixed;
- background-position: center top;
- background-repeat:  repeat;
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat:  repeat;
 
   padding-right: 0px;
   padding-left: 0px;
@@ -70,6 +70,11 @@ body {
   padding-left: 20px;
 }
 
+.navbar-fixed-top {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
 @media (max-width: 480px) and (min-width: 768px) {
 }
 @media (min-width: 768px) and (max-width: 979px) {
@@ -79,17 +84,10 @@ body {
     }
   }
 }
-@media (min-width: 980px) {
+@media (min-width: 980px) and (min-width: 1200px) {
   body {
     padding-top: 60px;
   }
-  .masthead {
-    h1 {
-      font-size: 120px;
-    }
-  }
-}
-@media (min-width: 1200px) {
   .masthead {
     h1 {
       font-size: 120px;
