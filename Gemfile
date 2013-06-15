@@ -34,8 +34,9 @@ end
 
 gem 'haml-rails'
 gem "jqcloud-rails"
+gem 'letter_opener', group: :development
 
-gem 'mecab-ruby', require: 'MeCab' # , path: './vendor/mecab-ruby-0.996'
+gem 'mecab-ruby', require: 'MeCab' # , pat_: './vendor/mecab-ruby-0.996'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
