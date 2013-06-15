@@ -84,7 +84,18 @@ body {
     }
   }
 }
-@media (min-width: 980px) and (min-width: 1200px) {
+@media (min-width: 980px) {
+  body {
+    padding-top: 60px;
+  }
+  .masthead {
+    h1 {
+      font-size: 120px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
   body {
     padding-top: 60px;
   }
