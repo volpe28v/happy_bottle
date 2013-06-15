@@ -18,7 +18,8 @@
         .alert{class: "alert-#{name}"}
           = flash[key]
 
-    = yield
+    .content-wrapper
+      = yield
 
     %footer.footer
       .container
