@@ -22,7 +22,11 @@ class Bottle < ActiveRecord::Base
         end
       end
 
-      words
+      data = []
+      words.each do |word, weight|
+        data << {word: word, weight: weight}
+      end
+      data
     end
   end
 
