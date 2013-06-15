@@ -76,7 +76,22 @@ body {
   margin-left: 0px;
 }
 
-@media (max-width: 480px) and (min-width: 768px) {
+@media (max-width: 480px) {
+  .masthead {
+    h1 {
+      font-size: 80px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .hero-unit {
+    padding: 20px;
+  }
+  .content-wrapper {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
 }
 @media (min-width: 768px) and (max-width: 979px) {
   .masthead {
