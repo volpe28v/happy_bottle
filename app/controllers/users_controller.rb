@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     begin
       User.transaction do
         @user = User.new(user_params)
-        @user.create!
+        @user.save!
         partnership = Partnership.create!
         @user.partnership = partnership
         @user.save!
