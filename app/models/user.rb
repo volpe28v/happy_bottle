@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   before_save do
-    self.hashed_password = self.class.encrypt(self.password) if self.password.present?
+    self.hashed_password = self.class.create_hash(self.password) if self.password.present?
   end
 
   def partner
