@@ -48,6 +48,7 @@ GEM
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
     i18n (0.6.4)
+    igo-ruby (0.1.5)
     jbuilder (1.4.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -64,7 +65,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mecab-ruby (0.99)
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.7)
@@ -127,11 +127,11 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   haml-rails
+  igo-ruby
   jbuilder (~> 1.2)
   jqcloud-rails
   jquery-rails
   letter_opener
-  mecab-ruby
   pg
   rails (= 4.0.0.rc2)
   sass-rails (~> 4.0.0.rc2)

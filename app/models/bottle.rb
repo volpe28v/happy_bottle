@@ -7,20 +7,16 @@ class Bottle < ActiveRecord::Base
     def analize_words
       words = Hash.new(0)
 
-      model = MeCab::Model.new()
-      tagger = model.createTagger
       all.each do |bottle|
-        node = tagger.parseToNode(bottle.message)
+        tag = TAGGER.parse(bottle.message)
 
-        while node
+        tag.each do |node|
           feature = node.feature
 
           # XXX Bad code...
           if feature['名詞']
             words[node.surface] += 1
           end
-
-          node = node.next
         end
       end
 
