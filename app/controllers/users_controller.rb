@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    User.transaction do
+      @user = User.create!(user_params)
+      @user.partnership = Partnership.create!
+      @user.save!
+
+      InvitationMailer.invite(params[:invitation], @user)
+    end
 
     store_user @user
 
