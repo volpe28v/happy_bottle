@@ -1,0 +1,6 @@
+%html
+  #{@bottle.owner.name.presence || @bottle.owner.email} さんからの HappyBottle が届きました。
+
+  %div.well.well-large
+    = @bottle.message
+    at [#{@bottle.created_at.strftime("%Y-%m-%d")}]

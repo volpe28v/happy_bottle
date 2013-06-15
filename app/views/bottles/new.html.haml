@@ -1,6 +1,7 @@
 %div.container-fluid
   %div.row-fluid
     %center
+      =image_tag "bottle.jpg"
       = form_for @bottle, url: bottles_path do |f|
         %div
           = f.text_area :message, placeholder: "どんな幸せがありましたか?"

@@ -38,6 +38,7 @@ end
 gem 'haml-rails'
 gem "jqcloud-rails"
 gem 'letter_opener', group: :development
+gem 'roadie', github: "Mange/roadie"
 
 gem 'igo-ruby'
 

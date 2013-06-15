@@ -30,5 +30,7 @@ module HappyBottle
       g.helper          false
       g.assets          false
     end
+
+    config.assets.enabled = true
   end
 end
