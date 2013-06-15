@@ -23,7 +23,9 @@ class UsersController < ApplicationController
       store_user @user
 
       redirect_to new_bottle_path, notice: "#{params[:invitation]} 宛に招待メールを送信しました!"
-    rescue
+    rescue => e
+      self.logger.error ["#{e.class} #{e.message}:", *e.backtrace.map {|m| '  '+m }].join("\n")
+
       redirect_to new_user_path, alert: 'Email はすでに登録されています' # XXX 他にもありそう
     end
   end
