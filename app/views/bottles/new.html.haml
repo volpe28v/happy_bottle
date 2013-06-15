@@ -4,6 +4,6 @@
     = form_for @bottle, url: bottles_path do |f|
       %div
         = f.label "Happy Message"
-        = f.text_field :message
+        = f.text_field :message, placeholder: "どんな幸せがありましたか?"
 
-      = f.submit 'ボトルを流す', class: "btn"
+      = f.submit '瓶を流す', class: "btn"
