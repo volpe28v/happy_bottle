@@ -2,7 +2,7 @@
   %div.row-fluid
 
     - @bottles.each do |bottle|
-      #div.well
+      %div.well
         %h4 #{bottle.message}
         %p [#{bottle.created_at.strftime("%Y-%m-%d")}]
 
