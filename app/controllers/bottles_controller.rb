@@ -3,6 +3,7 @@ class BottlesController < ApplicationController
 
   def new
     @bottle = Bottle.new
+    @key_words = current_user.partner.bottles.analize_words
   end
 
   def create
