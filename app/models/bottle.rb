@@ -1,6 +1,8 @@
 class Bottle < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
 
+  scope :not_delivered_yet, -> { where('delivered_at IS NULL') }
+
   class << self
     def analize_words
       words = Hash.new(0)
