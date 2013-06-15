@@ -13,13 +13,10 @@
           .container-fluid
             %a.brand(href='/') HappyBottle
 
-    - if flash[:notice]
-      .alert.alert-success
-        = flash[:notice]
-
-    - if flash[:alert]
-      .alert.alert-error
-        = flash[:alert]
+    - {notice: 'success', alert: 'error'}.each do |key, name|
+      - if flash[key]
+        .alert{class: "alert-#{name}"}
+          = flash[key]
 
     = yield
 
