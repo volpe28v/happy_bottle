@@ -31,4 +31,9 @@ class User < ActiveRecord::Base
   def update_invitation_token
     self.invitation_token = OpenSSL::Random.random_bytes(16).unpack("H*").first
   end
+
+  def verify!
+    self.invitation_token = nil
+    self.save!
+  end
 end

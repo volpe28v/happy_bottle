@@ -1,7 +1,8 @@
 HappyBottle::Application.routes.draw do
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new, :create, :update] do
     member do
       get '/verify/:invitation_token' => :verify, as: :verify
+      get :setting
     end
   end
   resources :bottles, only: [:new, :create]

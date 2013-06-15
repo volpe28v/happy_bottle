@@ -23,7 +23,15 @@ class UsersController < ApplicationController
   end
 
   def verify
-    # TODO Verify
+    @user = User.find_by_invitation_token(params[:invitation_token])
+    @user.verify!
+
+    redirect_to setting_user_path(@user)
+  end
+
+  def setting
+    # TODO password が nil だと、必ず setting に飛ばすようにしたい
+    @user = User.find(params[:id])
   end
 
   private
