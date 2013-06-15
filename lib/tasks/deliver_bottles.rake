@@ -7,6 +7,7 @@ task :deliver_bottles do
       partner = owner.partner
       bottle = owner.bottles.not_delivered_yet.sample
       next unless bottle
+      next unless partner.activated?
 
       begin
         BottleMailer.one_bottle(partner, bottle).deliver

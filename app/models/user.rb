@@ -10,11 +10,6 @@ class User < ActiveRecord::Base
     self.hashed_password = self.class.create_hash(self.password) if self.password.present?
   end
 
-  def partner
-    # TODO Refactor
-    (self.partnership.users - [self]).first
-  end
-
   class << self
     def find_by_email_and_password(email, password)
       User.where(email: email, hashed_password: create_hash(password)).first
@@ -23,6 +18,15 @@ class User < ActiveRecord::Base
     def create_hash(password)
       Digest::SHA1.hexdigest(password)
     end
+  end
+
+  def activated?
+    self.hashed_password.present? && self.invitation_token.blank?
+  end
+
+  def partner
+    # TODO Refactor
+    (self.partnership.users - [self]).first
   end
 
   def create_bottle(params)

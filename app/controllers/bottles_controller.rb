@@ -1,5 +1,6 @@
 class BottlesController < ApplicationController
   before_action :login_required
+  before_action :activated_required
 
   def new
     @bottle = Bottle.new
@@ -26,5 +27,9 @@ class BottlesController < ApplicationController
 
   def bottle_params
     params.require(:bottle).permit(:message)
+  end
+
+  def activated_required
+    redirect_to setting_user_path(current_user) unless current_user.activated?
   end
 end
