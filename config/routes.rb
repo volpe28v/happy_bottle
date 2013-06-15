@@ -1,4 +1,5 @@
 HappyBottle::Application.routes.draw do
+  root to: 'welcome#index'
   resources :users, only: [:new, :create, :update] do
     member do
       get '/verify/:invitation_token' => :verify, as: :verify
@@ -8,8 +9,6 @@ HappyBottle::Application.routes.draw do
   resources :bottles, only: [:new, :create]
   resources :session, only: [:new, :create]
   get 'bottles/tag' => 'bottles#tag'
-
-  root to: 'bottles#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
