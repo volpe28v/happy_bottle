@@ -68,6 +68,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.7)
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -131,6 +132,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   mecab-ruby
+  pg
   rails (= 4.0.0.rc2)
   sass-rails (~> 4.0.0.rc2)
   sdoc
