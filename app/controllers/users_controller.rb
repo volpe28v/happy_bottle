@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     begin
       User.transaction do
-        @user = User.create!(user_params)
+        @user = User.new(user_params)
+        @user.create!
         partnership = Partnership.create!
         @user.partnership = partnership
         @user.save!
@@ -21,9 +22,9 @@ class UsersController < ApplicationController
 
       store_user @user
 
-      redirect_to new_bottle_path, notice: params[:invitation] + "宛に招待メールを送信しました!"
+      redirect_to new_bottle_path, notice: "#{params[:invitation]} 宛に招待メールを送信しました!"
     rescue
-      redirect_to new_user_path
+      redirect_to new_user_path, alert: 'Email はすでに登録されています' # XXX 他にもありそう
     end
   end
 
