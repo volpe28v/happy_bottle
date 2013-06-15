@@ -4,12 +4,12 @@ class SessionController < ApplicationController
   end
 
   def create
-    # TODO ログイン処理をする
     @user = User.find_by_email_and_password(params[:user][:email], params[:user][:password])
 
     if @user
-      # TODO 成功画面へ遷移する 
-      redirect_to session_login_path, notice: 'success'
+      store_user @user
+
+      redirect_to new_bottle_path
     else
       redirect_to session_login_path, notice: 'failure'
     end
