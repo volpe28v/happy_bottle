@@ -1,6 +1,31 @@
-%html
-  #{@bottle.owner.name.presence || @bottle.owner.email} さんからの HappyBottle が届きました。
+:css
+  body {
+    background-color: white;
+    margin-left: 14px;
+    margin-right: 14px;
+  }
 
-  %div.well.well-large
-    = @bottle.message
-    at [#{@bottle.created_at.strftime("%Y-%m-%d")}]
+  #message {
+    background-color: aliceblue;
+    margin: 5px;
+    padding: 3px;
+
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+  }
+
+%html
+  %body
+    %b
+      #{@bottle.owner.name.presence || @bottle.owner.email} 
+    さんからの HappyBottle が届きました。
+
+    %center
+      #message
+        %h3
+          = @bottle.message
+        %p
+          [#{@bottle.created_at.strftime("%Y-%m-%d %H:%M")}]
+
+      =image_tag(url_for(image_path "bottle-small.jpg"), width: "200px")
