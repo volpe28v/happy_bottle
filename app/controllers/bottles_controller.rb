@@ -6,7 +6,7 @@ class BottlesController < ApplicationController
 
     # TODO パートナーが未登録の場合の処理を考える
     if current_user.partner
-      @key_words = current_user.partner.bottles.analize_words
+      @key_words = current_user.partner.bottles.delivered.analize_words
     else
       @key_words = []
     end
@@ -19,8 +19,7 @@ class BottlesController < ApplicationController
   end
 
   def tag
-    @bottles = current_user.partner.bottles.find_by_tag(URI.decode(params[:tag]))
-
+    @bottles = current_user.partner.bottles.delivered.find_by_tag(URI.decode(params[:tag]))
   end
 
   private
