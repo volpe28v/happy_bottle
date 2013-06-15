@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessor :password
+
   belongs_to :partnership
-  has_many :bottles, foreign_key: "owner_id", dependent: :destroy
+  has_many :bottles, foreign_key: 'owner_id', dependent: :destroy
 
   before_save do
     self.hashed_password = self.class.encrypt(self.password) if self.password.present?
@@ -14,10 +15,10 @@ class User < ActiveRecord::Base
 
   class << self
     def find_by_email_and_password(email, password)
-      User.where(email: email, hashed_password: encrypt(password)).first
+      User.where(email: email, hashed_password: create_hash(password)).first
     end
 
-    def encrypt(password)
+    def create_hash(password)
       Digest::SHA1.hexdigest(password)
     end
   end
