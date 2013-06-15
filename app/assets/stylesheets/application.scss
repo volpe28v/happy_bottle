@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require bootstrap-responsive
  *= require jqcloud
  *= require_self
  *= require_tree .
@@ -19,7 +20,6 @@ body {
  background-attachment: fixed;
  background-position: center top;
  background-repeat:  repeat;
- padding-top: 60px;
 }
 
 .jumbotron {
@@ -60,4 +60,16 @@ body {
     margin-bottom: 0;
     color: #777;
   }
+}
+
+@media (max-width: 480px) {
+}
+@media (min-width: 768px) and (max-width: 979px) {
+}
+@media (min-width: 980px) {
+  body {
+    padding-top: 60px;
+  }
+}
+@media (min-width: 1200px) {
 }
