@@ -1,4 +1,6 @@
 class BottlesController < ApplicationController
+  before_action :login_required
+
   def new
     @bottle = Bottle.new
   end

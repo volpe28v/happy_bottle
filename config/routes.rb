@@ -1,7 +1,10 @@
 HappyBottle::Application.routes.draw do
   resources :bottles, only: [:new, :create]
-  get "session/login"
+
+  get 'session/login'
   post 'session' => 'session#create'
+
+  root to: 'bottles#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
