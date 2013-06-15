@@ -1,5 +1,5 @@
-%div.container
-  %div.row
+%div.container-fluid
+  %div.row-fluid
 
     = form_for @bottle, url: bottles_path do |f|
       %div
@@ -7,3 +7,16 @@
         = f.text_field :message, placeholder: "どんな幸せがありましたか?"
 
       = f.submit '瓶を流す', class: "btn"
+
+    :javascript
+      var word_array = #{
+          @key_words.map {|key_word|
+            {text: key_word[:word] , weight: key_word[:weight]}
+          }.to_json
+        };
+
+      $(function() {
+        $("#example").jQCloud(word_array);
+      });
+
+    %div#example{ style: "width: 100%; height: 200px;"}

@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'haml-rails'
+gem "jqcloud-rails"
 
 gem 'mecab-ruby', require: 'MeCab' # , path: './vendor/mecab-ruby-0.996'
 
