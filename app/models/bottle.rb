@@ -1,7 +1,7 @@
 class Bottle < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
 
-  scope :not_delivered_yet, -> { where('delivered_at IS NULL') }
+  scope :delivered , -> { where('delivered_at IS NOT NULL') }
 
   class << self
     def analize_words
