@@ -15,7 +15,7 @@ class BottlesController < ApplicationController
       return
     end
 
-    redirect_to new_bottle_path, notice: '流したよー'
+    redirect_to new_bottle_path, notice: '幸せが詰まった瓶を流しました！'
   end
 
   def tag
