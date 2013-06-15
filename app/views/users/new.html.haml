@@ -1,0 +1,12 @@
+.container
+  .row
+    = form_for @user, url: users_path do |f|
+      %div
+        = f.label :email
+        = f.text_field :email
+
+      %div
+        = f.label :password
+        = f.text_field :password
+
+      = f.submit 'OK', class: "btn"
