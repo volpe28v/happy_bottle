@@ -30,6 +30,10 @@ class Bottle < ActiveRecord::Base
       end
       data
     end
+
+    def find_by_tag(tag)
+      where(["message LIKE ?", "%#{tag}%"])
+    end
   end
 
   def deliver!(date = DateTime.now)

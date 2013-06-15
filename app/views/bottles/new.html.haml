@@ -11,7 +11,7 @@
     :javascript
       var word_array = #{
           @key_words.map {|key_word|
-            {text: key_word[:word] , weight: key_word[:weight]}
+            {text: key_word[:word] , weight: key_word[:weight], link: bottles_tag_path(tag: key_word[:word]) }
           }.to_json
         };
 

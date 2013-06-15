@@ -12,6 +12,11 @@ class BottlesController < ApplicationController
     redirect_to new_bottle_path, notice: '流したよー'
   end
 
+  def tag
+    @bottles = current_user.partner.bottles.find_by_tag(URI.decode(params[:tag]))
+
+  end
+
   private
 
   def bottle_params

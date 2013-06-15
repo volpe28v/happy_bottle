@@ -2,6 +2,7 @@ HappyBottle::Application.routes.draw do
   resources :users, only: [:new, :create]
   resources :bottles, only: [:new, :create]
   resources :session, only: [:new, :create]
+  get 'bottles/tag' => 'bottles#tag'
 
   root to: 'bottles#new'
 
