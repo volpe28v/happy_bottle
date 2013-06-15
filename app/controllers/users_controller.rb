@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       @user.save!
 
       partner = User.create!(email: params[:invitation])
+      partner.partnership = partnership
       partner.update_invitation_token
       partner.save!
 
@@ -22,9 +23,19 @@ class UsersController < ApplicationController
     redirect_to new_bottle_path
   end
 
+  def update
+    @user = User.find(params[:id])
+
+    @user.update_attributes!(user_params)
+
+    redirect_to new_bottle_path
+  end
+
   def verify
     @user = User.find_by_invitation_token(params[:invitation_token])
     @user.verify!
+
+    store_user @user
 
     redirect_to setting_user_path(@user)
   end
