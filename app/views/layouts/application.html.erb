@@ -7,6 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<body id="body_core" style="
+ background-color: white;
+ background-attachment: fixed;
+ background-position: center top;
+ background-repeat:  repeat;
+ padding-top: 60px;
+">
+<header>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="/">HappyBottle</a>
+      </div>
+    </div>
+  </div>
+</header>
 
 <%= flash[:notice] %>
 <%= yield %>
