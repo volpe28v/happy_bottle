@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       partner.update_invitation_token
       partner.save!
 
-      InvitationMailer.invite(partner, @user)
+      InvitationMailer.invite(partner, @user).deliver
     end
 
     store_user @user
