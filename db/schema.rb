@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130615045733) do
+ActiveRecord::Schema.define(version: 20130615123447) do
 
   create_table "bottles", force: true do |t|
     t.text     "message"
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "delivered_at"
   end
 
   add_index "bottles", ["owner_id"], name: "index_bottles_on_owner_id"
