@@ -11,7 +11,7 @@ class SessionController < ApplicationController
 
       redirect_to new_bottle_path
     else
-      redirect_to new_session_path, notice: 'failure'
+      redirect_to new_session_path, alert: 'emailまたはパスワードが一致しません'
     end
   end
 end
