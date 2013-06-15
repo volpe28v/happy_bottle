@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
     self.hashed_password = self.class.encrypt(self.password) if self.password.present?
   end
 
+  def partner
+    # TODO Refactor
+    (self.partnership.users - [self]).first
+  end
+
   class << self
     def find_by_email_and_password(email, password)
       User.where(email: email, hashed_password: encrypt(password)).first

@@ -5,7 +5,7 @@ task :deliver_bottles do
   #Partnership を取得
   Partnership.all.each do |partnership|
     partnership.users.each do |owner|
-      partner = (partnership.users - [owner]).first
+      partner = owner.partner
       bottle = owner.bottles.sample
       next unless bottle
 
