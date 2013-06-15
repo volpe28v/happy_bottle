@@ -6,7 +6,7 @@ task :deliver_bottles do
   Partnership.all.each do |partnership|
     partnership.users.each do |owner|
       partner = owner.partner
-      bottle = owner.bottles.sample
+      bottle = owner.bottles.not_delivered_yet.sample
       next unless bottle
 
       BottleMailer.one_bottle(partner, bottle).deliver

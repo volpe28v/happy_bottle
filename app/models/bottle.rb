@@ -4,6 +4,7 @@ class Bottle < ActiveRecord::Base
   validates :message, presence: true
 
   scope :delivered , -> { where('delivered_at IS NOT NULL') }
+  scope :not_delivered_yet , -> { where('delivered_at IS NULL') }
 
   class << self
     def analize_words
