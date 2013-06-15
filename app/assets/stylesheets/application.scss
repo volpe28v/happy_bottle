@@ -14,6 +14,14 @@
  *= require_tree .
  */
 
+body {
+ background-color: white;
+ background-attachment: fixed;
+ background-position: center top;
+ background-repeat:  repeat;
+ padding-top: 60px;
+}
+
 .jumbotron {
   text-align: center;
 }
