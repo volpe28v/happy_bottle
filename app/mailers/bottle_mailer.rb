@@ -1,5 +1,5 @@
 class BottleMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "HappyBottle<#{ENV['MAIL_ADDR']}>"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -10,6 +10,6 @@ class BottleMailer < ActionMailer::Base
     @receiver = receiver
     @bottle = bottle
 
-    mail to: @receiver.email
+    mail to: @receiver.email, subject: "幸せボトルが届きました!"
   end
 end
