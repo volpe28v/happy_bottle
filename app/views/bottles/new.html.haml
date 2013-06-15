@@ -5,7 +5,7 @@
         %div
           = f.text_area :message, placeholder: "どんな幸せがありましたか?"
 
-        = f.submit @partner.name + 'さんへ瓶を流す', class: "btn btn-primary  btn-large"
+        = f.submit "#{@partner.name.presence || @partner.email}さんへ瓶を流す", class: "btn btn-primary  btn-large"
 
     :javascript
       var word_array = #{
