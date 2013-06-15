@@ -1,12 +1,11 @@
 %div.container-fluid
   %div.row-fluid
+    %center
+      = form_for @bottle, url: bottles_path do |f|
+        %div
+          = f.text_area :message, placeholder: "どんな幸せがありましたか?"
 
-    = form_for @bottle, url: bottles_path do |f|
-      %div
-        = f.label "Happy Message"
-        = f.text_field :message, placeholder: "どんな幸せがありましたか?"
-
-      = f.submit '瓶を流す', class: "btn"
+        = f.submit 'パートナーへ瓶を流す', class: "btn btn-primary  btn-large"
 
     :javascript
       var word_array = #{

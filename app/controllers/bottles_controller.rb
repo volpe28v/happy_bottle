@@ -16,7 +16,7 @@ class BottlesController < ApplicationController
     begin
       @bottle = current_user.create_bottle(bottle_params)
     rescue
-      redirect_to new_bottle_path, notice: 'メッセージが入力されていません！'
+      redirect_to new_bottle_path, alert: 'メッセージが入力されていません！'
       return
     end
 
