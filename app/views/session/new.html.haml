@@ -1,6 +1,5 @@
-%div.container
-  %div.row
-
+.container
+  .row
     = form_for @user, url: '/session' do |f|
       %div
         = f.label :email
@@ -12,3 +11,4 @@
 
       = f.submit 'OK', class: "btn"
 
+    = link_to 'Signup', new_user_path
