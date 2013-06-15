@@ -1,3 +1,8 @@
+PATH
+  remote: ./vendor/mecab-ruby-0.996
+  specs:
+    mecab-ruby (0.99)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -120,6 +125,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  mecab-ruby!
   rails (= 4.0.0.rc2)
   sass-rails (~> 4.0.0.rc2)
   sdoc

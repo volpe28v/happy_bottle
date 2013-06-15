@@ -34,6 +34,8 @@ end
 
 gem 'haml-rails'
 
+gem 'mecab-ruby', path: './vendor/mecab-ruby-0.996'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
