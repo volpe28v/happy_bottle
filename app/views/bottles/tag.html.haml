@@ -1,8 +1,8 @@
 %div.container-fluid
   %div.row-fluid
 
-    %ul
-      - @bottles.each do |bottle|
-        %li #{bottle.message} [#{bottle.created_at.strftime("%Y-%m-%d")}]
-
+    - @bottles.each do |bottle|
+      #div.well
+        %h4 #{bottle.message}
+        %p [#{bottle.created_at.strftime("%Y-%m-%d")}]
 
