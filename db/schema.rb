@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130615135114) do
+ActiveRecord::Schema.define(version: 20130615154029) do
 
   create_table "bottles", force: true do |t|
     t.text     "message"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20130615135114) do
     t.datetime "updated_at"
     t.integer  "partnership_id"
     t.string   "invitation_token"
+    t.string   "name"
   end
 
   add_index "users", ["partnership_id"], name: "index_users_on_partnership_id"

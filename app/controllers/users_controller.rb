@@ -4,23 +4,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.transaction do
-      @user = User.create!(user_params)
-      partnership = Partnership.create!
-      @user.partnership = partnership
-      @user.save!
+    begin
+      User.transaction do
+        @user = User.create!(user_params)
+        partnership = Partnership.create!
+        @user.partnership = partnership
+        @user.save!
 
-      partner = User.create!(email: params[:invitation])
-      partner.partnership = partnership
-      partner.update_invitation_token
-      partner.save!
+        partner = User.create!(email: params[:invitation])
+        partner.partnership = partnership
+        partner.update_invitation_token
+        partner.save!
 
-      InvitationMailer.invite(partner, @user).deliver
+        InvitationMailer.invite(partner, @user).deliver
+      end
+
+      store_user @user
+
+      redirect_to new_bottle_path, notice: params[:invitation] + "宛に招待メールを送信しました!"
+    rescue
+      redirect_to new_user_path
     end
-
-    store_user @user
-
-    redirect_to new_bottle_path
   end
 
   def update
@@ -48,6 +52,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:name, :email, :password)
   end
 end

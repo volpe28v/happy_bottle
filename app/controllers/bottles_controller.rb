@@ -3,13 +3,8 @@ class BottlesController < ApplicationController
 
   def new
     @bottle = Bottle.new
-
-    # TODO パートナーが未登録の場合の処理を考える
-    if current_user.partner
-      @key_words = current_user.partner.bottles.delivered.analize_words
-    else
-      @key_words = []
-    end
+    @partner = current_user.partner
+    @key_words = current_user.partner.bottles.delivered.analize_words
   end
 
   def create
