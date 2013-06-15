@@ -15,8 +15,8 @@
         = f.password_field :password, required: true
 
       %div
-        = f.label :invitation
-        = text_field_tag :invitation, nil, required: true
+        = f.label :invitation_email
+        = text_field_tag :invitation, nil, placeholder: 'your.partner@exmpale.com', required: true
 
       = f.submit 'OK', class: "btn"
 
