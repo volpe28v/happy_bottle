@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
       Digest::SHA1.hexdigest(password)
     end
   end
+
+  def create_bottle(params)
+    Bottle.create(params) do |bottle|
+      bottle.owner = self
+    end
+  end
 end
