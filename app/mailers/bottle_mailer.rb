@@ -10,6 +10,8 @@ class BottleMailer < ActionMailer::Base
     @receiver = receiver
     @bottle = bottle
 
+    @bottle.deliver!
+
     mail to: @receiver.email, subject: "幸せボトルが届きました!"
   end
 end
