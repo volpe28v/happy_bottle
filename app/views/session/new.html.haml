@@ -3,11 +3,11 @@
     = form_for @user, url: '/session' do |f|
       %div
         = f.label :email
-        = f.text_field :email
+        = f.text_field :email, required: true
 
       %div
         = f.label :password
-        = f.text_field :password
+        = f.text_field :password, required: true
 
       = f.submit 'OK', class: "btn"
 

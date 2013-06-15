@@ -3,7 +3,7 @@
     = form_for @user do |f|
       %div
         = f.label :name
-        = f.text_field :name
+        = f.text_field :name, required: true
 
       %div
         = f.label :email
@@ -11,7 +11,7 @@
 
       %div
         = f.label :password
-        = f.text_field :password
+        = f.text_field :password, required: true
 
       = f.submit 'OK', class: "btn"
 

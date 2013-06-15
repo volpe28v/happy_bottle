@@ -4,19 +4,19 @@
     = form_for @user, url: users_path do |f|
       %div
         = f.label :name
-        = f.text_field :name
+        = f.text_field :name, required: true
 
       %div
         = f.label :email
-        = f.text_field :email
+        = f.text_field :email, required: true
 
       %div
         = f.label :password
-        = f.text_field :password
+        = f.text_field :password, required: true
 
       %div
         = f.label :invitation
-        = text_field_tag :invitation
+        = text_field_tag :invitation, nil, required: true
 
       = f.submit 'OK', class: "btn"
 
