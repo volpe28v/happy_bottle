@@ -6,9 +6,10 @@ class InvitationMailer < ActionMailer::Base
   #
   #   en.invitation_mailer.invite.subject
   #
-  def invite(to, user)
+  def invite(partner, user)
+    @partner = partner
     @user = user
 
-    mail to: to
+    mail to: partner.email
   end
 end

@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
       bottle.owner = self
     end
   end
+
+  def update_invitation_token
+    self.invitation_token = OpenSSL::Random.random_bytes(16).unpack("H*").first
+  end
 end

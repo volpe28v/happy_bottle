@@ -1,5 +1,9 @@
 HappyBottle::Application.routes.draw do
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    member do
+      get '/verify/:invitation_token' => :verify, as: :verify
+    end
+  end
   resources :bottles, only: [:new, :create]
   resources :session, only: [:new, :create]
   get 'bottles/tag' => 'bottles#tag'
