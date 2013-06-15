@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   belongs_to :partnership
   has_many :bottles, foreign_key: 'owner_id', dependent: :destroy
 
+  validates :email, presence: true
+
   before_save do
     self.hashed_password = self.class.encrypt(self.password) if self.password.present?
   end
