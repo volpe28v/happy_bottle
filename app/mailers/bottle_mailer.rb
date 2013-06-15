@@ -12,6 +12,6 @@ class BottleMailer < ActionMailer::Base
 
     @bottle.deliver!
 
-    mail(to: @receiver.email, subject: "HappyBottle が届きました!", css: [:bootstrap])
+    mail(to: @receiver.email, subject: 'HappyBottle が届きました!')
   end
 end
