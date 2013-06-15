@@ -1,7 +1,7 @@
 %div.container
   %div.row
 
-    = form_for @user, url: session_path do |f|
+    = form_for @user, url: '/session' do |f|
       %div
         = f.label :email
         = f.text_field :email

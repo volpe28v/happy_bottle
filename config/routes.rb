@@ -1,8 +1,6 @@
 HappyBottle::Application.routes.draw do
   resources :bottles, only: [:new, :create]
-
-  get 'session/login'
-  post 'session' => 'session#create'
+  resources :session, only: [:new, :create]
 
   root to: 'bottles#new'
 

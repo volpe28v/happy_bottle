@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  def login
+  def new
     @user = User.new
   end
 
@@ -11,7 +11,7 @@ class SessionController < ApplicationController
 
       redirect_to new_bottle_path
     else
-      redirect_to session_login_path, notice: 'failure'
+      redirect_to new_session_path, notice: 'failure'
     end
   end
 end
