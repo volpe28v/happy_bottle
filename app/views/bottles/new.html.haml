@@ -16,7 +16,9 @@
         };
 
       $(function() {
-        $("#example").jQCloud(word_array);
+        $("#example").jQCloud(word_array,{
+          shape: "rectangular"
+        });
       });
 
     %div#example{ style: "width: 100%; height: 200px;"}
