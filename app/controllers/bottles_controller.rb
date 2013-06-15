@@ -13,7 +13,12 @@ class BottlesController < ApplicationController
   end
 
   def create
-    @bottle = current_user.create_bottle(bottle_params)
+    begin
+      @bottle = current_user.create_bottle(bottle_params)
+    rescue
+      redirect_to new_bottle_path, notice: 'メッセージが入力されていません！'
+      return
+    end
 
     redirect_to new_bottle_path, notice: '流したよー'
   end

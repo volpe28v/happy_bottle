@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def create_bottle(params)
-    Bottle.create(params) do |bottle|
+    Bottle.create!(params) do |bottle|
       bottle.owner = self
     end
   end

@@ -1,6 +1,8 @@
 class Bottle < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
 
+  validates :message, presence: true
+
   scope :delivered , -> { where('delivered_at IS NOT NULL') }
 
   class << self
