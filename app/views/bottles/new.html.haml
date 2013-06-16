@@ -8,6 +8,10 @@
 
         = f.submit "#{@partner.name.presence || @partner.email}さんへ瓶を流す", class: "btn btn-primary  btn-large"
 
+      %span.tag-title
+        これまであなたに届いた瓶の欠片
+      %div#example{ style: "width: 100%; height: 200px;"}
+
     :javascript
       var word_array = #{
           @key_words.map {|key_word|
@@ -16,9 +20,5 @@
         };
 
       $(function() {
-        $("#example").jQCloud(word_array,{
-          shape: "rectangular"
-        });
+        $("#example").jQCloud(word_array);
       });
-
-    %div#example{ style: "width: 100%; height: 200px;"}

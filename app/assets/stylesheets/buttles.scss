@@ -1,5 +1,6 @@
 .buttle-list {
   list-style-type: none;
+  margin: 0px;
 
   .message {
     font-size: 20px;
@@ -8,4 +9,9 @@
   .created-at {
     float: right;
   }
+}
+
+.tag-title {
+  color: gray;
+  font-style: italic;
 }
