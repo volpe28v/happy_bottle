@@ -8,6 +8,7 @@ task :deliver_bottles do
       bottle = owner.bottles.not_delivered_yet.sample
       next unless bottle
       next unless partner.activated?
+      next if rand(30) > 10  # とりあえず３日に一通くらいのランダムで回してみる
 
       begin
         BottleMailer.one_bottle(partner, bottle).deliver
