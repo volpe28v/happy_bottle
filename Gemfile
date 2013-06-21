@@ -36,4 +36,10 @@ gem 'haml-rails'
 gem 'igo-ruby'
 gem 'jqcloud-rails'
 gem 'letter_opener', group: :development
-gem 'roadie', github: "Mange/roadie"
+gem 'roadie', github: 'Mange/roadie'
+
+group :test do
+  gem 'rspec-rails', group: :development
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
