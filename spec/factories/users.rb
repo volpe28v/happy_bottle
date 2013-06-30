@@ -11,7 +11,11 @@ FactoryGirl.define do
         user.partnership = partnership
         user.save!
 
-        create(:user, name: 'partner', partnership: partnership)
+        partner = create(:user, name: 'partner', partnership: partnership)
+        partner.save!
+
+        bottle = partner.create_bottle({ message: "オムライス"})
+        bottle.deliver!
       end
     end
   end
