@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature '瓶の欠片を表示する', :js do
+feature '瓶の欠片を表示する', js: true do
   let!(:user) { create(:user) }
 
   context 'サインインしている' do
