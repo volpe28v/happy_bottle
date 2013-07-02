@@ -29,3 +29,6 @@
           [#{@bottle.created_at.strftime("%Y-%m-%d %H:%M")}]
 
       =image_tag(url_for(image_path "bottle-small.jpg"), width: "200px")
+
+      %div
+        =link_to("あなたもHappyBottleを流す","http://happy-bottle.herokuapp.com/bottles/new")
