@@ -11,7 +11,8 @@ class Bottle < ActiveRecord::Base
       words = Hash.new(0)
 
       all.each do |bottle|
-        tag = TAGGER.parse(bottle.message)
+        # 絵文字の場合だと parse に失敗することがあるので除外しとく
+        tag = TAGGER.parse(bottle.message.encode('ASCII-8bit', invalid: :replace, undef: :replace, replace: ''))
 
         tag.each do |node|
           feature = node.feature
