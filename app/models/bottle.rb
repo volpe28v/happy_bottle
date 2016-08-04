@@ -5,6 +5,7 @@ class Bottle < ActiveRecord::Base
 
   scope :delivered , -> { where('delivered_at IS NOT NULL') }
   scope :not_delivered_yet , -> { where('delivered_at IS NULL') }
+  scope :time_has_passed , -> { where('created_at <= ?', 1.month.ago) }
 
   class << self
     def analize_words
